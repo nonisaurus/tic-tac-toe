@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
 @font-face {
     font-family: "bubble";
-    src: url("./a-alloy-ink-font/AlloyInk-lgdWw.otf");
+    src: url("/fonts/AlloyInk-lgdWw.otf");
     }
 
 /* body */
@@ -274,4 +274,16 @@ footer {
     margin: 0;
     padding: 5em;
     
+}
+
+/* circle and cross background pictures */
+
+.circle {
+    background-image: url(/pictures/circle.png);
+    background-size: 20%;
+}
+
+.cross {
+    background-image: url(/pictures/cross.png);
+    background-size: 20%;
 }
