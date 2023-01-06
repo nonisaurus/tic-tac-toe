@@ -1,3 +1,13 @@
+/* imports */
+@import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+@font-face {
+    font-family: "bubble";
+    src: url("./a-alloy-ink-font/AlloyInk-lgdWw.otf");
+    }
+
+/* body */
+
 body {
     margin: 0 auto;
     box-sizing: border-box;
@@ -5,40 +15,142 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    background-color: rgb(255, 247, 255);
+    font-size: 35px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 
 /* heading */
 
-header {
+.header-section {
     margin: 0;
     padding: 1.2em;
+    width: 75%;
+
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 100%;
+
+    border-bottom: solid 3px rgb(0, 0, 0);
+}
+
+#refresh-btn {
+    margin: 11em 3em;
+
+    grid-row: 1;
+    grid-column: 1;
+    justify-content: center;
+    align-items: center;   
+}
+
+#header-title {
+    margin: 0 auto;
+    padding: 3em;
+
+    grid-row: 1;
+    grid-column: 2;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.nav-btn {
-    margin: 0;
-    padding: 0.8em;
+.page-title-h1 {
+    font-family: 'bubble';
+    font-size: 2em;
+    color: #eed0ff;
 }
 
-.page-title {
+.page-title-p {
     margin: 0;
-    padding: 2em;
+    padding: 1rem;
+    color: rgb(200, 57, 219);
+    text-shadow: rgb(164, 85, 152) 1px 1px;
 }
+
+
+
+#restart-btn {
+    margin: 11em 3em;
+
+    grid-row: 1;
+    grid-column: 3;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* copied from resourse >>> linked in README.md then edited it a little */
+
+header button {
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-family: "Rubik", sans-serif;
+    font-size: 0.9rem;
+  }
+header button.btn {
+    font-weight: 600;
+    color: #382b22;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #fff0f0;
+    border: 2px solid #b18597;
+    border-radius: 0.75em;
+    transition: transform 0.15s;
+    transform-style: preserve-3d;
+  }
+header button.btn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f9c4d2;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  
+header button.btn:hover {
+    background: #ffe9e9;
+    transform: translate(0, 0.25em);
+  }
+header button.btn:hover::before {
+    box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+    transform: translate3d(0, 0.5em, -1em);
+  }
+header  button.btn:active {
+    background: #ffe9e9;
+    transform: translate(0em, 0.75em);
+  }
+ header button.btn:active::before {
+    box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+    transform: translate3d(0, 0, -1em);
+  }
+
 
 
 /* main */
 
-main {
+.main-wrap-around {
     margin: 0;
     padding: 1.2em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    width: 25em;
+    height: 15em;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 33% 33% 33%;
+    justify-content: center;
 }
 
 
@@ -47,81 +159,119 @@ main {
 .game {
     margin: 0;
     padding: 2em;
+
+
+    grid-row: 1 / span 3;
+    grid-column: 1 / span 1;
+
     display: grid;
     grid-template-rows: 33% 33% 33%;
     grid-template-columns: 33% 33% 33%;
+
+}
+
+.playing-field {
+    border: 1px solid rgb(123, 120, 128);
+
+}
+
+#div0 {
+    border-left: none;
+    border-top: none;
 }
 
 #div1 {
-    border: 1px solid black;
-    border-left: none;
     border-top: none;
-    padding: 50px;
 }
 
 #div2 {
-    border: 1px solid black;
+    border-right: none;
     border-top: none;
-    padding: 50px;
 }
 
 #div3 {
-    border: 1px solid black;
-    border-right: none;
-    border-top: none;
-    padding: 50px;
-}
-
-#div4 {
-    border: 1px solid black;
     border-left: none;
-    padding: 50px;
 }
 
 #div5 {
-    border: 1px solid black;
-    padding: 50px;
+    border-right: none;
 }
 
 #div6 {
-    border: 1px solid black;
-    border-right: none;
-    padding: 50px;
+    border-left: none;
+    border-bottom: none;
 }
 
 #div7 {
-    border: 1px solid black;
-    border-left: none;
     border-bottom: none;
-    padding: 50px;
 }
 
 #div8 {
-    border: 1px solid black;
-    border-bottom: none;
-    padding: 50px;
-}
-
-#div9 {
-    border: 1px solid black;
     border-right: none;
     border-bottom: none;
-    padding: 50px;
 }
 
 
 /* players */
 
 .player {
-    margin: auto;
-    width: 50%;
-    padding: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
+#first-player-wrapper {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#second-player-wrapper {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+#tie-wrapper {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.btn-player{
+    border: 3px solid rgb(242, 204, 255);
+    border-radius: 30%;
+    padding: 1em 1.5em;
+    background: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+#player-one:hover {
+    border: 5px solid rgb(224, 172, 252);
+    background-color: #ff9ee8;
+    color: rgb(255, 255, 255);
+}
+
+#player-two:hover {
+    border: 5px solid rgb(252, 172, 248);
+    background-color: #d17be7;
+    color: rgb(255, 255, 255);
+}
+
+
+#tie {
+    font-family: inherit;
+    font-size: inherit;
+    
+}
+
+/* winning message*/
+.winning-message {
+    display: none;
+}
 
 /* footer */
 
 footer {
     margin: 0;
-    padding: 1.2em;
+    padding: 5em;
+    
 }
