@@ -7,7 +7,6 @@
     }
 
 /* body */
-
 body {
     margin: 0 auto;
     box-sizing: border-box;
@@ -23,7 +22,6 @@ body {
 
 
 /* heading */
-
 .header-section {
     margin: 0;
     padding: 1.2em;
@@ -85,7 +83,6 @@ body {
 
 
 /* copied from resourse >>> linked in README.md then edited it a little */
-
 header button {
     outline: none;
     border: 0;
@@ -141,7 +138,6 @@ header  button.btn:active {
 
 
 /* main */
-
 .main-wrap-around {
     margin: 0;
     padding: 1.2em;
@@ -155,7 +151,6 @@ header  button.btn:active {
 
 
 /* game */
-
 .game {
     margin: 0;
     
@@ -170,7 +165,6 @@ header  button.btn:active {
 }
 
 /* circle and cross background pictures */
-
 .circle {
     background-image: url(/pictures/circle.png);
     background-size: cover;
@@ -277,13 +271,23 @@ header  button.btn:active {
 
 /* winning message*/
 .winning-message {
-    display: none;
 }
 
 /* token choices */
 .possible-tokens {
-    display: none;
+    position: absolute;
 }
+
+/* visibility none */
+.add-visibility {
+    visibility: visible;
+}
+
+/* vibility visible */
+.visibility-none {
+    visibility: hidden;
+}
+
 
 /* footer */
 

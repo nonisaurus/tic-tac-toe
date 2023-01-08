@@ -4,10 +4,12 @@ console.log('lets do this!');
 const playerOneCross = 1;
 const playerTwoCircle = 2;
 const refreshBtn = document.querySelector('#refresh-btn');
-const tokenChoice = document.querySelector('#choose-btn');
+const tokenChoiceBtn = document.querySelector('#choose-btn');
+const tokenChoices = document.querySelector('.possible-tokens')
 let paragraphHeader = document.querySelector('.page-title-p');
 let playingField = document.querySelector('.game')
-const squaresNodeList = document.querySelectorAll('.playing-field')
+const squaresNodeList = document.querySelectorAll('.playing-field');
+const winningMessage = document.querySelector('.winning-message');
 const winningComboIndex = [
                         [0, 1, 2],
                         [3, 4, 5],
@@ -30,7 +32,7 @@ const playingFieldSquares = Array.prototype.slice.call(squaresNodeList);
 playingFieldSquares.forEach(
     function (element) {
         element.onclick = function () {
-            alert ('works')
+            circleFunction(element)
         }}
 )
 
@@ -77,4 +79,16 @@ switch (true) {
 }
 
 
+// toggle choose button
+tokenChoiceBtn.onclick = function (event) {
+    event.preventDefault()
+    let mainElement = document.querySelector('.main-wrap-around')
+    if (tokenChoices.classList.contains('visibility-none')){
+        tokenChoices.classList.remove('visibility-none');
+        mainElement.classList.add('visibility-none')
 
+    } else {
+        tokenChoices.classList.add('visibility-none')
+        mainElement.classList.remove('visibility-none')
+    }
+}
