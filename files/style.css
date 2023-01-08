@@ -73,7 +73,7 @@ body {
 
 
 
-#restart-btn {
+#choose-btn {
     margin: 11em 3em;
 
     grid-row: 1;
@@ -158,7 +158,7 @@ header  button.btn:active {
 
 .game {
     margin: 0;
-    padding: 2em;
+    
 
 
     grid-row: 1 / span 3;
@@ -167,15 +167,27 @@ header  button.btn:active {
     display: grid;
     grid-template-rows: 33% 33% 33%;
     grid-template-columns: 33% 33% 33%;
-
 }
+
+/* circle and cross background pictures */
+
+.circle {
+    background-image: url(/pictures/circle.png);
+    background-size: cover;
+    border: 1px solid rgb(123, 120, 128);
+}
+
+.cross {
+    background-image: url(/pictures/cross.png);
+    background-size: cover;
+    border: 1px solid rgb(123, 120, 128);
+} 
 
 .playing-field {
     border: 1px solid rgb(123, 120, 128);
-
 }
 
-#div0 {
+/* #div0 {
     border-left: none;
     border-top: none;
 }
@@ -209,7 +221,7 @@ header  button.btn:active {
 #div8 {
     border-right: none;
     border-bottom: none;
-}
+} */
 
 
 /* players */
@@ -268,6 +280,11 @@ header  button.btn:active {
     display: none;
 }
 
+/* token choices */
+.possible-tokens {
+    display: none;
+}
+
 /* footer */
 
 footer {
@@ -276,14 +293,4 @@ footer {
     
 }
 
-/* circle and cross background pictures */
 
-.circle {
-    background-image: url(/pictures/circle.png);
-    background-size: 20%;
-}
-
-.cross {
-    background-image: url(/pictures/cross.png);
-    background-size: 20%;
-} 
