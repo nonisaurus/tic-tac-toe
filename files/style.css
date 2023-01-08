@@ -273,9 +273,12 @@ header  button.btn:active {
 .winning-message {
 }
 
-/* token choices */
+/* token choices element */
 .possible-tokens {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* visibility none */
@@ -288,6 +291,12 @@ header  button.btn:active {
     visibility: hidden;
 }
 
+/* extra tokens */
+.extra-tokens{
+    width: 15%;
+    justify-content: center;
+    padding: 1em;
+}
 
 /* footer */
 
