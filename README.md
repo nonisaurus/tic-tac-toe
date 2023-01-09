@@ -32,7 +32,7 @@ Have well-formatted, and well-commented code
 
 ### Wireframe  
 ***
-![](/wireframe.png)
+![](/pictures/wireframe.png)
 
 <br>
 

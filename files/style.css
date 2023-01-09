@@ -157,8 +157,6 @@ header  button.btn:active {
 /* game */
 .game {
     margin: 0;
-    
-
 
     grid-row: 1 / span 3;
     grid-column: 1 / span 1;
@@ -184,43 +182,6 @@ header  button.btn:active {
 .playing-field {
     border: 1px solid rgb(123, 120, 128);
 }
-
-/* #div0 {
-    border-left: none;
-    border-top: none;
-}
-
-#div1 {
-    border-top: none;
-}
-
-#div2 {
-    border-right: none;
-    border-top: none;
-}
-
-#div3 {
-    border-left: none;
-}
-
-#div5 {
-    border-right: none;
-}
-
-#div6 {
-    border-left: none;
-    border-bottom: none;
-}
-
-#div7 {
-    border-bottom: none;
-}
-
-#div8 {
-    border-right: none;
-    border-bottom: none;
-} */
-
 
 /* players */
 
@@ -275,6 +236,10 @@ header  button.btn:active {
 
 /* winning message*/
 .winning-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* token choices element */

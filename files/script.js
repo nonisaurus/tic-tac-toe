@@ -11,6 +11,12 @@ const squaresNodeList = document.querySelectorAll('.playing-field');
 const winningMessage = document.querySelector('.winning-message');
 let paragraphHeader = document.querySelector('.page-title-p');
 
+let currentShape = "circle";
+let isWinner = false;
+
+let circleTokens = [];
+let crossTokens = [];
+
 const winningComboIndex = [
                         [0, 1, 2],
                         [3, 4, 5],
@@ -27,9 +33,6 @@ const winningComboIndex = [
 const playingFieldSquares = Array.prototype.slice.call(squaresNodeList);
 
 // toggle between two functions
-let currentShape = "circle";
-let isWinner = false;
-
 const toggleTurns = (element) => {
     if ( currentShape === "circle" ){
         circleFunction(element);
@@ -61,9 +64,6 @@ const displayWhosTurn = (content) => {
 } 
 
 // function to target each playinffieldquare when its clicked 
-let circleTokens = [];
-let crossTokens = [];
-
 playingFieldSquares.forEach(
     function (element) {
         element.onclick = () => {
@@ -77,8 +77,9 @@ playingFieldSquares.forEach(
 
             // calling winning
             isWinner = determineWinner(currentShape);
-            console.log('isWinnner-->', isWinner)
-            // if 
+
+            // display winner
+            displayWinner('isWinner')
 
             // taking turns
             toggleTurns(element)
@@ -91,15 +92,15 @@ playingFieldSquares.forEach(
 
 // check if tokens numbers match winning numbers
 const determineWinner = (currentShape) => {
-    const arrayToCheck = currentShape === 'circle' ? circleTokens : crossTokens
+    circleORcrossArray = currentShape === 'circle' ? circleTokens : crossTokens
     // console.log('array to check', arrayToCheck , currentShape);
-    if (arrayToCheck.length >= 3){
+    if (circleORcrossArray.length >= 3){
         // looping through every winningcombo arrays
         const hasWon = winningComboIndex.some(winningOptionArr => {
            // checking each array one by one > index 
             return winningOptionArr.every(winningIndex => {
                 // is this winning index includes arraytocheck? return boolean
-                return arrayToCheck.includes(winningIndex)
+                return circleORcrossArray.includes(winningIndex)
            })
         }) 
         return hasWon ? currentShape : false 
@@ -107,12 +108,22 @@ const determineWinner = (currentShape) => {
     return false 
 }
 
+// function to display winner
+const displayWinner = () => {
+    if (isWinner){
+        if (isWinner === 'circle'){
+            popUpWinElement()
+            console.log('display circle won')
+        } else {
+            console.log('display cross')
+        }
+    }
+}
 
-
-
-
-
-
+// pop up window for winner
+const popUpWinElement = () => {
+    winningMessage.classList.remove('visibility-none')
+}
 
 
 // start button
@@ -127,7 +138,7 @@ tokenChoiceBtn.onclick = function (event) {
     event.preventDefault()
     let mainElement = document.querySelector('.main-wrap-around')
     if (tokenChoices.classList.contains('visibility-none')){
-        tokenChoices.classList.remove('visibility-none');
+        tokenChoices.classList.remove('visibility-none')
         mainElement.classList.add('visibility-none')
 
     } else {
