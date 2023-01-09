@@ -11,7 +11,6 @@ const squaresNodeList = document.querySelectorAll('.playing-field');
 const winningMessage = document.querySelector('.winning-message');
 let paragraphHeader = document.querySelector('.page-title-p');
 
-
 const winningComboIndex = [
                         [0, 1, 2],
                         [3, 4, 5],
@@ -21,8 +20,7 @@ const winningComboIndex = [
                         [0, 3, 6],
                         [1, 4, 7],
                         [2, 5, 8]   
-]
-
+];
 
 
 //nodelist to an array
@@ -30,6 +28,8 @@ const playingFieldSquares = Array.prototype.slice.call(squaresNodeList);
 
 // toggle between two functions
 let currentShape = "circle";
+let isWinner = false;
+
 const toggleTurns = (element) => {
     if ( currentShape === "circle" ){
         circleFunction(element);
@@ -45,14 +45,13 @@ const toggleTurns = (element) => {
 const circleFunction = (element) => {
     element.setAttribute('class', 'circle')
     displayWhosTurn("It's your turn Pink")
-    cantClickAgain(element)
 }
 
 // function to change background to cross img
 const crossFunction = (element) => {
     element.setAttribute('class', 'cross')
     displayWhosTurn("It's your turn Purple")
-    cantClickAgain(element)
+
 }
 
 // function to display whos turn it is
@@ -61,31 +60,52 @@ const displayWhosTurn = (content) => {
     return paragraphHeader.innerHTML
 } 
 
-// function to take off event listener if they have class circle or cross
-const cantClickAgain = (element) => {
-    console.log(element)
-    console.log(onClickFunction)
-    if (element.classList.contains('circle') || element.classList.contains('cross')) {
-        element.removeEventListener('click',onClickFunctionBind, false)
-    }
-}
+// function to target each playinffieldquare when its clicked 
+let circleTokens = [];
+let crossTokens = [];
 
-// fucntion for the onclick event
-const onClickFunction = (element) => {
-    toggleTurns(element)
-}
-
-// function to target each playinffieldquare when its clicked >> bind (has to have 2 parameter) >> binding this data to function so it doesnt get called straight away
-let choosenTokens = [];
 playingFieldSquares.forEach(
     function (element) {
-        onClickFunctionBind = onClickFunction.bind(this, element);
-        element.addEventListener('click', onClickFunctionBind);
-        choosenTokens.push(playingFieldSquares.indexOf(element));
+        element.onclick = () => {
+            
+            // saving input to empty variables -- REWRITE LATER
+            if ( currentShape === 'circle'){
+                circleTokens.push(playingFieldSquares.indexOf(element))
+            } else if ( currentShape === 'cross') {
+                crossTokens.push(playingFieldSquares.indexOf(element))  
+            }
+
+            // calling winning
+            isWinner = determineWinner(currentShape);
+            console.log('isWinnner-->', isWinner)
+            // if 
+
+            // taking turns
+            toggleTurns(element)
+
+            // remove click event on current element
+            element.onclick = null
+        };
     }
 )
 
-console.log(choosenTokens);
+// check if tokens numbers match winning numbers
+const determineWinner = (currentShape) => {
+    const arrayToCheck = currentShape === 'circle' ? circleTokens : crossTokens
+    // console.log('array to check', arrayToCheck , currentShape);
+    if (arrayToCheck.length >= 3){
+        // looping through every winningcombo arrays
+        const hasWon = winningComboIndex.some(winningOptionArr => {
+           // checking each array one by one > index 
+            return winningOptionArr.every(winningIndex => {
+                // is this winning index includes arraytocheck? return boolean
+                return arrayToCheck.includes(winningIndex)
+           })
+        }) 
+        return hasWon ? currentShape : false 
+    } 
+    return false 
+}
 
 
 
@@ -95,8 +115,12 @@ console.log(choosenTokens);
 
 
 
-
-
+// start button
+startBtn.onclick = (event) => {
+    event.preventDefault()
+    paragraphHeader.innerHTML = "Its your turn Purple";
+    return paragraphHeader
+}
 
 // toggle choose button
 tokenChoiceBtn.onclick = function (event) {
