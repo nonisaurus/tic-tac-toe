@@ -1,15 +1,17 @@
 console.log('lets do this!');
 
 // declaring and grabbings stuff from html
-const playerOneCross = 1;
-const playerTwoCircle = 2;
-const refreshBtn = document.querySelector('#refresh-btn');
-const tokenChoiceBtn = document.querySelector('#choose-btn');
+const restartBtn = document.querySelector('.restart-btn');
+const startBtn = document.querySelector('.start-btn')
+const tokenChoiceBtn = document.querySelector('.choose-btn');
+const aiBtn = document.querySelector('.ai-btn');
+
 const tokenChoices = document.querySelector('.possible-tokens')
-let paragraphHeader = document.querySelector('.page-title-p');
-let playingField = document.querySelector('.game')
 const squaresNodeList = document.querySelectorAll('.playing-field');
 const winningMessage = document.querySelector('.winning-message');
+let paragraphHeader = document.querySelector('.page-title-p');
+
+
 const winningComboIndex = [
                         [0, 1, 2],
                         [3, 4, 5],
@@ -23,21 +25,21 @@ const winningComboIndex = [
 
 
 
-
 //nodelist to an array
 const playingFieldSquares = Array.prototype.slice.call(squaresNodeList);
 
-
-// function to target each playinffieldquare when its clicked
-playingFieldSquares.forEach(
-    function (element) {
-        element.onclick = function () {
-            circleFunction(element)
-        }}
-)
-
-
-
+// toggle between two functions
+let currentShape = "circle";
+const toggleTurns = (element) => {
+    if ( currentShape === "circle" ){
+        circleFunction(element);
+        currentShape = "cross"
+    }
+    else {
+        crossFunction(element)
+        currentShape = "circle"
+    }
+}
 
 // function to change background to circle image
 const circleFunction = (element) => {
@@ -61,22 +63,39 @@ const displayWhosTurn = (content) => {
 
 // function to take off event listener if they have class circle or cross
 const cantClickAgain = (element) => {
-    if (element.getAttribute('class') === true) {
-        element.removeEventListener('onclick', function (){
-            return element
-        })
+    console.log(element)
+    console.log(onClickFunction)
+    if (element.classList.contains('circle') || element.classList.contains('cross')) {
+        element.removeEventListener('click',onClickFunctionBind, false)
     }
 }
 
-
-
-// switch statement to change background to x or o
-switch (true) {
-    case (crossFunction):
-    case (circleFunction):
-        break
-    
+// fucntion for the onclick event
+const onClickFunction = (element) => {
+    toggleTurns(element)
 }
+
+// function to target each playinffieldquare when its clicked >> bind (has to have 2 parameter) >> binding this data to function so it doesnt get called straight away
+let choosenTokens = [];
+playingFieldSquares.forEach(
+    function (element) {
+        onClickFunctionBind = onClickFunction.bind(this, element);
+        element.addEventListener('click', onClickFunctionBind);
+        choosenTokens.push(playingFieldSquares.indexOf(element));
+    }
+)
+
+console.log(choosenTokens);
+
+
+
+
+
+
+
+
+
+
 
 
 // toggle choose button
@@ -92,3 +111,6 @@ tokenChoiceBtn.onclick = function (event) {
         mainElement.classList.remove('visibility-none')
     }
 }
+
+
+

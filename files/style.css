@@ -60,25 +60,25 @@ body {
     text-shadow: rgb(164, 85, 152) 1px 1px;
 }
 
-#start-btn {
+.start-btn {
     margin: 5em 3em;
     grid-row: 2;
     grid-column: 1;
 }
 
-#refresh-btn {
+.restart-btn {
     margin: 5em 3em;
     grid-row: 1;
     grid-column: 1;
 }
 
-#choose-btn {
+.choose-btn {
     margin: 5em 3em;
     grid-row: 1;
     grid-column: 3;
 }
 
-#ai-btn {
+.ai-btn {
     margin: 5em 3em;
     grid-row: 2;
     grid-column: 3;
