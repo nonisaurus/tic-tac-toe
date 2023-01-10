@@ -6,164 +6,163 @@
     src: url("/fonts/AlloyInk-lgdWw.otf");
     }
 
+* {
+    border: 1px solid black
+}
+
 /* body */
 body {
-    margin: 0 auto;
+    align-items: center;
+    background-color: rgb(255, 247, 255);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background-color: rgb(255, 247, 255);
-    font-size: 35px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 35px;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 
 /* heading */
 .header-section {
-    margin: 0;
-    padding: 1.2em;
-    width: 75%;
-
+    border-bottom: solid 3px rgb(0, 0, 0);
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: 50% 50%;
-
-    border-bottom: solid 3px rgb(0, 0, 0);
+    margin: 0;
+    padding: 1.2em;
+    width: 75%;
+    box-shadow: 0 13px 5px -5px rgb(237, 191, 243);
 }
 
 #header-title {
-    margin: 0 auto;
-    padding: 3em;
-    
-    grid-row: 1 / span 2;
-    grid-column: 2;
-    
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    grid-column: 2;
+    grid-row: 1 / span 2;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .page-title-h1 {
-    font-family: 'bubble';
-    font-size: 2em;
     color: #eed0ff;
+    font-family: 'bubble';
+    font-size: 2.5em;
+    margin: 0;
+    width: auto;
 }
 
 .page-title-p {
+    color: rgb(200, 57, 219);
     margin: 0;
     padding: 1rem;
-    color: rgb(200, 57, 219);
     text-shadow: rgb(164, 85, 152) 1px 1px;
 }
 
 .start-btn {
-    margin: 5em 3em;
-    grid-row: 2;
     grid-column: 1;
+    grid-row: 2;
+    margin: 5em 3em;
 }
 
 .restart-btn {
-    margin: 5em 3em;
-    grid-row: 1;
     grid-column: 1;
+    grid-row: 1;
+    margin: 5em 3em;
 }
 
 .choose-btn {
-    margin: 5em 3em;
-    grid-row: 1;
     grid-column: 3;
+    grid-row: 1;
+    margin: 5em 3em;
 }
 
 .ai-btn {
-    margin: 5em 3em;
-    grid-row: 2;
     grid-column: 3;
+    grid-row: 2;
+    margin: 5em 3em;
 }
 
 
 
 /* copied from resourse >>> linked in README.md then edited it a little */
-button {
-    outline: none;
+header button {
     border: 0;
-    vertical-align: middle;
-    text-decoration: none;
     font-family: "Rubik", sans-serif;
     font-size: 0.9rem;
+    outline: none;
+    text-decoration: none;
+    vertical-align: middle;
   }
-button.btn {
-    font-weight: 600;
-    color: #382b22;
-    text-transform: uppercase;
-    padding: 1.25em 2em;
+header button.btn {
     background: #fff0f0;
-    border: 2px solid #b18597;
     border-radius: 0.75em;
-    transition: transform 0.15s;
+    border: 2px solid #b18597;
+    color: #382b22;
+    font-weight: 600;
+    padding: 1.25em 2em;
+    text-transform: uppercase;
     transform-style: preserve-3d;
+    transition: transform 0.15s;
   }
-button.btn::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+header button.btn::before {
     background: #f9c4d2;
     border-radius: inherit;
+    bottom: 0;
     box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
     transform: translate3d(0, 0.75em, -1em);
     transition: transform 0.15s, box-shadow 0.15s;
+    width: 100%;
   }
   
-button.btn:hover {
+header button.btn:hover {
     background: #ffe9e9;
     transform: translate(0, 0.25em);
   }
-button.btn:hover::before {
+
+header button.btn:hover::before {
     box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
     transform: translate3d(0, 0.5em, -1em);
   }
-button.btn:active {
+
+header button.btn:active {
     background: #ffe9e9;
     transform: translate(0em, 0.75em);
   }
- button.btn:active::before {
+
+header button.btn:active::before {
     box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
     transform: translate3d(0, 0, -1em);
   }
 
 
-
-/* main */
-.main-wrap-around {
-    margin: 0;
-    padding: 1.2em;
-    width: 25em;
-    height: 15em;
+/* game */
+.game-wrap-around {
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 33% 33% 33%;
+    height: 15em;
     justify-content: center;
+    margin: 0;
+    padding: 1.2em;
+    width: 25em;
 }
 
-
-/* game */
 .game {
-    margin: 0;
-
-    grid-row: 1 / span 3;
-    grid-column: 1 / span 1;
-
     display: grid;
-    grid-template-rows: 33% 33% 33%;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
     grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    margin: 0;
 }
 
 /* circle and cross background pictures */
@@ -186,44 +185,44 @@ button.btn:active {
 /* players */
 
 .player {
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
 #first-player-wrapper {
-    grid-row: 1;
     grid-column: 2;
+    grid-row: 1;
 }
 
 #second-player-wrapper {
-    grid-row: 2;
     grid-column: 2;
+    grid-row: 2;
 }
 
 #tie-wrapper {
-    grid-row: 3;
     grid-column: 2;
+    grid-row: 3;
 }
 
 .btn-player{
-    border: 3px solid rgb(242, 204, 255);
-    border-radius: 30%;
-    padding: 1em 1.5em;
     background: inherit;
+    border-radius: 30%;
+    border: 3px solid rgb(242, 204, 255);
     font-family: inherit;
     font-size: inherit;
+    padding: 1em 1.5em;
 }
 
 #player-one:hover {
-    border: 5px solid rgb(224, 172, 252);
     background-color: #ff9ee8;
+    border: 5px solid rgb(224, 172, 252);
     color: rgb(255, 255, 255);
 }
 
 #player-two:hover {
-    border: 5px solid rgb(252, 172, 248);
     background-color: #d17be7;
+    border: 5px solid rgb(252, 172, 248);
     color: rgb(255, 255, 255);
 }
 
@@ -236,45 +235,66 @@ button.btn:active {
 
 /* winning message*/
 .winning-message {
+    left: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-
     
 }
 
 /* token choices element */
 .possible-tokens {
-    position: absolute;
-    top: 50%;
     left: 50%;
+    position: absolute;
+    top: 60%;
     transform: translate(-50%, -50%);
 }
 
 /* visibility none */
 .add-visibility {
     visibility: visible;
+    margin: 0;
 }
 
 /* vibility visible */
 .visibility-none {
     visibility: hidden;
+    margin: 0;
 }
 
 /* extra tokens */
 .extra-tokens{
-    width: 15%;
     justify-content: center;
     padding: 1em;
+    width: 15%;
+    margin: 0 auto;
+}
+
+/* music */
+.music-box {
+    display: flex;
+
+}
+
+.music-btn { 
+    background-color: rgb(255, 255, 255);
+    color: rgb(155, 36, 184);
+    flex-wrap: wrap;
+    font-size: 0.5em;
+    height: auto;
+    margin: 0;
+    padding: 0.3em;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 85px;
 }
 
 /* footer */
 
 footer {
     margin: 0;
-    padding: 5em;
-    
+    padding: 10px;
 }
 
 

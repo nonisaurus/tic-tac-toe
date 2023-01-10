@@ -10,72 +10,78 @@
 </head>
 
 <body>
-
     <header class="header-section">
-
+        
         <section id="header-title">
-            <h1 class="page-title-h1">TicTacToe</h1>
-            <p class="page-title-p">Welcome, press Start to start the game. You are Purple. </p>
+            <h1 class="page-title-h1">Tic-Tac-Toe</h1>
+            <p class="page-title-p">Welcome, press Start to start the game! </p>
         </section>
 
         <button class="btn restart-btn">Restart</button>
         <button class="btn start-btn">Start</button>
         <button class="btn choose-btn">Choose Token</button>
         <button class="btn ai-btn">AI</button>
-
+        
     </header>
-
- 
-
+    
+    
+    
     <main class="main-wrap-around">
+        
+        <div class="game-wrap-around">
+            <section class="game">
+                <div class="playing-field" id="div0" ></div>
+                <div class="playing-field" id="div1"></div>
+                <div class="playing-field" id="div2"></div>
+                <div class="playing-field" id="div3"></div>
+                <div class="playing-field" id="div4"></div>
+                <div class="playing-field" id="div5"></div>
+                <div class="playing-field" id="div6"></div>
+                <div class="playing-field" id="div7"></div>
+                <div class="playing-field" id="div8"></div>
+            </section >
+            
+            <section class="player" id="first-player-wrapper">
+                <h2 class="btn-player" id="player-one">Purple</h2>
+                <p id="player-1-score">0</p>
+            </section>
+            
+            <section class="player" id="second-player-wrapper">
+                <h2 class="btn-player" id="player-two">Pink</h2>
+                <p id="player-2-score">0</p>
+            </section>
+            
+            <section class="player" id="tie-wrapper">
+                <h2 id="tie">Tie</h2>
+                <p id="tie-score">0</p>
+            </section>
+        </div>
 
-        <section class="game">
-            <div class="playing-field" id="div0" ></div>
-            <div class="playing-field" id="div1"></div>
-            <div class="playing-field" id="div2"></div>
-            <div class="playing-field" id="div3"></div>
-            <div class="playing-field" id="div4"></div>
-            <div class="playing-field" id="div5"></div>
-            <div class="playing-field" id="div6"></div>
-            <div class="playing-field" id="div7"></div>
-            <div class="playing-field" id="div8"></div>
-        </section >
 
-        <section class="player" id="first-player-wrapper">
-            <h2 class="btn-player" id="player-one">Purple</h2>
-            <p id="player-1-score">0</p>
+        <section class="possible-tokens visibility-none">
+            <img class="extra-tokens" src="/pictures/token_one.png" alt="Sweets Token" >
+            <img class="extra-tokens" src="/pictures/token_two.png" alt="Crepe Token" >
+            <img class="extra-tokens" src="/pictures/token_three.png" alt="Bunny Sweet Token" >
+            <img class="extra-tokens" src="/pictures/token_four.png" alt="Strawberry Milkshake Token" >
+            <img class="extra-tokens" src="/pictures/token_five.png" alt="Strawberry Shortcake Token" >
+            <img class="extra-tokens" src="/pictures/token_six.png" alt="Chocolate Token" >
+            <img class="extra-tokens" src="/pictures/token_seven.png" alt="Tea Token" >
+            <img class="extra-tokens" src="/pictures/token_eight.png" alt="Pancake Token" >
         </section>
-
-        <section class="player" id="second-player-wrapper">
-            <h2 class="btn-player" id="player-two">Pink</h2>
-            <p id="player-2-score">0</p>
-        </section>
-
-        <section class="player" id="tie-wrapper">
-            <h2 id="tie">Tie</h2>
-            <p id="tie-score">0</p>
-        </section>
-
     </main>
-
+    
     <section class="winning-message visibility-none"> 
         <h1></h1>
     </section>
-    <section class="possible-tokens visibility-none">
-        <img class="extra-tokens" src="/pictures/token_one.png" alt="Sweets Token" >
-        <img class="extra-tokens" src="/pictures/token_two.png" alt="Crepe Token" >
-        <img class="extra-tokens" src="/pictures/token_three.png" alt="Bunny Sweet Token" >
-        <img class="extra-tokens" src="/pictures/token_four.png" alt="Strawberry Milkshake Token" >
-        <img class="extra-tokens" src="/pictures/token_five.png" alt="Strawberry Shortcake Token" >
-        <img class="extra-tokens" src="/pictures/token_six.png" alt="Chocolate Token" >
-        <img class="extra-tokens" src="/pictures/token_seven.png" alt="Tea Token" >
-        <img class="extra-tokens" src="/pictures/token_eight.png" alt="Pancake Token" >
-    </section>
-
+    
     <footer> created by noni</footer>
-
-
-
+    
+    
+    <figure class="music-box">
+        <audio class="music" src="/music/background_music.mp3" loop autoplay></audio>
+        <button class="music-btn">START PLAY</button>
+    </figure>
+    
     <script src="/files/script.js"></script>
 </body>
 </html>

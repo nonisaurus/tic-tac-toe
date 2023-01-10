@@ -6,15 +6,18 @@ const startBtn = document.querySelector('.start-btn')
 const tokenChoiceBtn = document.querySelector('.choose-btn');
 const aiBtn = document.querySelector('.ai-btn');
 
-let mainElement = document.querySelector('.main-wrap-around')
+let mainElement = document.querySelector('.game-wrap-around')
 const tokenChoices = document.querySelector('.possible-tokens')
 const squaresNodeList = document.querySelectorAll('.playing-field');
 const winningMessage = document.querySelector('.winning-message');
 let paragraphHeader = document.querySelector('.page-title-p');
 const extraTokenNodeList = document.querySelector('.extra-tokens')
+const musicBox = document.querySelector('.music')
+let musicBtn = document.querySelector('.music-btn')
 
 let currentShape = "circle";
 let isWinner = false;
+let isPlaying = false;
 
 let circleTokens = [];
 let crossTokens = [];
@@ -124,11 +127,21 @@ const determineWinner = (currentShape) => {
 // display winner
 const displayWinner = () => {
      if (isWinner){
+        
+        paragraphHeader.innerHTML = 'Press RESTART'
+            
         removeAdVisible(winningMessage, mainElement)
+
         currentShape === 'circle' ? winningMessage.innerHTML = 'Purple Won' : winningMessage.innerHTML = 'Pink Won'
-    } else if ((circleTokens.length || crossTokens.length) === 5) {
+
+        
+    } else if ((circleTokens.length || crossTokens.length) === 5) { 
+        paragraphHeader.innerHTML = 'Press RESTART'
+
         winningMessage.innerHTML = 'Its a Tie'
+
         removeAdVisible(winningMessage, mainElement)
+        
     } 
 }
 
@@ -167,10 +180,12 @@ extraTokensArray.forEach(
 
 console.log(specialToken)
 
+// toggle for music
+function toggleMusic () {
+    return musicBox.paused ? musicBox.play(musicBtn.innerHTML = "STOP PLAY") : musicBox.pause(musicBtn.innerHTML = "START PLAY");
+}
 
-
-
-
+musicBtn.onclick = () => {toggleMusic()}
 
 
 
@@ -213,5 +228,5 @@ tokenChoiceBtn.onclick = function (event) {
     removeAdVisible(tokenChoices, mainElement)
 }
 
-
+// music start / stop
 
