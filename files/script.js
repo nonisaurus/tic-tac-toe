@@ -11,12 +11,14 @@ const tokenChoices = document.querySelector('.possible-tokens')
 const squaresNodeList = document.querySelectorAll('.playing-field');
 const winningMessage = document.querySelector('.winning-message');
 let paragraphHeader = document.querySelector('.page-title-p');
+const extraTokenNodeList = document.querySelector('.extra-tokens')
 
 let currentShape = "circle";
 let isWinner = false;
 
 let circleTokens = [];
 let crossTokens = [];
+let specialToken = [];
 
 const winningComboIndex = [
                         [0, 1, 2],
@@ -32,8 +34,9 @@ const winningComboIndex = [
 
 
 
-//nodelist to an array
+// nodelist to an array
 const playingFieldSquares = Array.prototype.slice.call(squaresNodeList);
+const extraTokensArray = Array.prototype.slice.call(extraTokenNodeList)
 
 // toggle between two functions
 const toggleTurns = (element) => {
@@ -48,14 +51,14 @@ const toggleTurns = (element) => {
 }
 
 
-// function to change background to circle image
+// change background to circle image
 const circleFunction = (element) => {
     element.classList.add('circle')
     displayWhosTurn("Pink, it's your turn!")
 }
 
 
-// function to change background to cross img
+// change background to cross img
 const crossFunction = (element) => {
     element.classList.add('cross')
     displayWhosTurn("Purple, it's your turn")
@@ -63,7 +66,7 @@ const crossFunction = (element) => {
 }
 
 
-// function to display whos turn it is
+// display whos turn it is
 const displayWhosTurn = (content) => {
     paragraphHeader.innerHTML = content
     return paragraphHeader.innerHTML
@@ -118,7 +121,7 @@ const determineWinner = (currentShape) => {
 }
 
 
-// function to display winner
+// display winner
 const displayWinner = () => {
      if (isWinner){
         removeAdVisible(winningMessage, mainElement)
@@ -142,12 +145,41 @@ const removeAdVisible = (removeFirst, addFirst) => {
 }
 
 
-// reset page to original - NOT DONE
+// reset page to original
 const resetPage = () => {
     winningMessage.classList.contains('visibility-none') ? false : winningMessage.classList.add('visibility-none')
 
     mainElement.classList.contains('visibility-none') ? mainElement.classList.remove('visibility-none') : false
+
+    tokenChoices.classList.add('visibility-none')
 }
+
+
+// saving token choice
+extraTokensArray.forEach(
+    function (element) {
+        element.onclick = () => {
+            element.push(specialToken.indexOf(element))
+        }
+
+    }
+)
+
+console.log(specialToken)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // BUTTONS
@@ -175,6 +207,9 @@ restartBtn.onclick = (event) => {
 // choose button
 tokenChoiceBtn.onclick = function (event) {
     event.preventDefault()
+
+    winningMessage.classList.contains('visibility-none') ? false : winningMessage.classList.add('visibility-none')
+
     removeAdVisible(tokenChoices, mainElement)
 }
 
