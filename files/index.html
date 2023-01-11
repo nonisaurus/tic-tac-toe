@@ -12,15 +12,17 @@
 <body>
     <header class="header-section">
         
-        <section id="header-title">
+        <section class="header-title">
             <h1 class="page-title-h1">Tic-Tac-Toe</h1>
             <p class="page-title-p">Welcome, press Start to start the game! </p>
         </section>
 
-        <button class="btn restart-btn">Restart</button>
-        <button class="btn start-btn">Start</button>
+        <button class="btn restart-btn">Start</button>
+        <!-- might need this button later so keeping it -->
+        <!-- <button class="btn start-btn">Start</button> -->
         <button class="btn choose-btn">Choose Token</button>
-        <button class="btn ai-btn">AI</button>
+        <!-- when I add AI this will be the button for it -->
+        <!-- <button class="btn ai-btn">NIU</button> -->
         
     </header>
     
@@ -41,18 +43,18 @@
                 <div class="playing-field" id="div8"></div>
             </section >
             
-            <section class="player" id="first-player-wrapper">
+            <section class="player" class="first-player-wrapper">
                 <h2 class="btn-player" id="player-one">Purple</h2>
                 <p id="player-1-score">0</p>
             </section>
             
-            <section class="player" id="second-player-wrapper">
+            <section class="player" class="second-player-wrapper">
                 <h2 class="btn-player" id="player-two">Pink</h2>
                 <p id="player-2-score">0</p>
             </section>
             
-            <section class="player" id="tie-wrapper">
-                <h2 id="tie">Tie</h2>
+            <section class="player" class="tie-wrapper">
+                <h2 class="tie">Tie</h2>
                 <p id="tie-score">0</p>
             </section>
         </div>
@@ -71,15 +73,14 @@
     </main>
     
     <section class="winning-message visibility-none"> 
-        <h1></h1>
     </section>
     
-    <footer> created by noni</footer>
+    <footer> created by <a href="https://github.com/nonisaurus/tictactoe"  target=”_blank”>nonisaurus</a></footer>
     
     
     <figure class="music-box">
-        <audio class="music" src="/music/background_music.mp3" loop autoplay></audio>
-        <button class="music-btn">START PLAY</button>
+        <audio class="music" src="/music/background_music.mp3" loop ></audio>
+        <button class="music-btn">STOP PLAY</button>
     </figure>
     
     <script src="/files/script.js"></script>

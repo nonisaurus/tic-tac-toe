@@ -5,22 +5,26 @@
     font-family: "bubble";
     src: url("/fonts/AlloyInk-lgdWw.otf");
     }
-
-* {
-    border: 1px solid black
-}
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
 
 /* body */
 body {
     align-items: center;
-    background-color: rgb(255, 247, 255);
+    background: linear-gradient(rgb(247, 240, 248), rgb(251, 216, 251));
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 100%;
+    min-height: 100vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 35px;
+    font-size: 1.7rem;
     justify-content: center;
     margin: 0 auto;
+    padding: 0;
+
 }
 
 
@@ -30,60 +34,63 @@ body {
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: 50% 50%;
-    margin: 0;
-    padding: 1.2em;
-    width: 75%;
-    box-shadow: 0 13px 5px -5px rgb(237, 191, 243);
+    margin: 4rem;
+    padding: 1rem;
+    width: 80%;
+    box-shadow: 0 9px 9px -8px rgb(243, 152, 238);
 }
 
-#header-title {
+.header-title {
     align-items: center;
     display: flex;
     flex-direction: column;
     grid-column: 2;
     grid-row: 1 / span 2;
     justify-content: center;
-    margin: 0 auto;
 }
 
 .page-title-h1 {
-    color: #eed0ff;
+    color: 	rgb(255, 153, 255);
     font-family: 'bubble';
-    font-size: 2.5em;
+    font-size: 4rem;
     margin: 0;
-    width: auto;
+    text-shadow: rgb(251, 229, 250) 3px 5px;
 }
 
 .page-title-p {
-    color: rgb(200, 57, 219);
+    color: rgb(150, 45, 207);
     margin: 0;
-    padding: 1rem;
-    text-shadow: rgb(164, 85, 152) 1px 1px;
+    padding: 2rem;
+    text-shadow: rgb(255, 174, 243) 2px -2px;
+    font-family: 'Alegreya SC', serif;
+
 }
 
-.start-btn {
+/* I may need it in the future */
+/* .start-btn {
     grid-column: 1;
     grid-row: 2;
-    margin: 5em 3em;
-}
+    margin: 5rem 3rem;
+} */
 
 .restart-btn {
     grid-column: 1;
-    grid-row: 1;
-    margin: 5em 3em;
+    grid-row: 1 /span 2;
+    margin: 5rem 3rem;
 }
 
 .choose-btn {
     grid-column: 3;
-    grid-row: 1;
-    margin: 5em 3em;
+    grid-row: 1 / span 2;
+    margin: 5rem 3rem;
 }
 
-.ai-btn {
+/* I may need it in the future */
+/* .ai-btn {
     grid-column: 3;
     grid-row: 2;
-    margin: 5em 3em;
-}
+    margin: 5rem 3rem;
+} */
 
 
 
@@ -91,56 +98,58 @@ body {
 header button {
     border: 0;
     font-family: "Rubik", sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     outline: none;
     text-decoration: none;
     vertical-align: middle;
+    
   }
 header button.btn {
     background: #fff0f0;
-    border-radius: 0.75em;
+    border-radius: 0.75rem;
     border: 2px solid #b18597;
-    color: #382b22;
+    color: #b84dff;
     font-weight: 600;
-    padding: 1.25em 2em;
+    padding: 1.25rem 2rem;
     text-transform: uppercase;
     transform-style: preserve-3d;
     transition: transform 0.15s;
+    transition: 0.5s;
   }
 header button.btn::before {
     background: #f9c4d2;
     border-radius: inherit;
     bottom: 0;
-    box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px #b18597, 0 0.625rem 0 0 #ffe3e2;
     content: "";
     height: 100%;
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
-    transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75rem, -1rem);
     transition: transform 0.15s, box-shadow 0.15s;
     width: 100%;
   }
   
 header button.btn:hover {
     background: #ffe9e9;
-    transform: translate(0, 0.25em);
+    transform: translate(0, 0.25rem);
   }
 
 header button.btn:hover::before {
-    box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
-    transform: translate3d(0, 0.5em, -1em);
+    box-shadow: 0 0 0 2px #b18597, 0 0.5rem 0 0 #ffe3e2;
+    transform: translate3d(0, 0.5rem, -1rem);
   }
 
 header button.btn:active {
     background: #ffe9e9;
-    transform: translate(0em, 0.75em);
+    transform: translate(0rem, 0.75rem);
   }
 
 header button.btn:active::before {
     box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
-    transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1rem);
   }
 
 
@@ -149,11 +158,11 @@ header button.btn:active::before {
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 33% 33% 33%;
-    height: 15em;
+    height: 24rem;
     justify-content: center;
     margin: 0;
-    padding: 1.2em;
-    width: 25em;
+    padding: 1.2rem;
+    width: 40rem;
 }
 
 .game {
@@ -190,17 +199,17 @@ header button.btn:active::before {
     justify-content: space-around;
 }
 
-#first-player-wrapper {
+.first-player-wrapper {
     grid-column: 2;
     grid-row: 1;
 }
 
-#second-player-wrapper {
+.second-player-wrapper {
     grid-column: 2;
     grid-row: 2;
 }
 
-#tie-wrapper {
+.tie-wrapper {
     grid-column: 2;
     grid-row: 3;
 }
@@ -211,27 +220,36 @@ header button.btn:active::before {
     border: 3px solid rgb(242, 204, 255);
     font-family: inherit;
     font-size: inherit;
-    padding: 1em 1.5em;
+    padding: 1rem 1.5rem;
 }
 
-#player-one:hover {
+.player-one:hover {
     background-color: #ff9ee8;
     border: 5px solid rgb(224, 172, 252);
     color: rgb(255, 255, 255);
 }
 
-#player-two:hover {
+.player-two:hover {
     background-color: #d17be7;
     border: 5px solid rgb(252, 172, 248);
     color: rgb(255, 255, 255);
 }
 
-
-#tie {
-    font-family: inherit;
-    font-size: inherit;
-    
+/* token choices element */
+.extra-tokens{
+    justify-content: center;
+    padding: 0.8rem;
+    width: 15%;
+    margin: 0 auto;
 }
+
+.possible-tokens {
+    left: 50%;
+    position: absolute;
+    top: 60%;
+    transform: translate(-50%, -50%);
+}
+
 
 /* winning message*/
 .winning-message {
@@ -242,13 +260,56 @@ header button.btn:active::before {
     
 }
 
-/* token choices element */
-.possible-tokens {
-    left: 50%;
-    position: absolute;
-    top: 60%;
-    transform: translate(-50%, -50%);
+
+/* music */
+.music-box {
+    display: flex;
+    
 }
+
+.music-btn { 
+    background-color: rgb(255, 255, 255);
+    color: rgb(155, 36, 184);
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    height: auto;
+    margin: 0;
+    padding: 1rem;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 85px;
+}
+
+.tie {
+    font-size: 2rem;
+}
+
+
+/* footer */
+footer {
+    margin: 2rem;
+    padding: 3rem;
+    font-size: 1.2rem;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+a:link {
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    border-bottom: 1px solid;
+}
+
 
 /* visibility none */
 .add-visibility {
@@ -262,39 +323,111 @@ header button.btn:active::before {
     margin: 0;
 }
 
-/* extra tokens */
-.extra-tokens{
-    justify-content: center;
-    padding: 1em;
-    width: 15%;
-    margin: 0 auto;
+
+
+/* screen sizes */
+/* desktop laptop */
+@media all and (max-width: 1350px) {
+    .page-title-h1{
+        font-size: 2.2rem;
+    }
+    .page-title-p {
+        font-size: 1.3rem;
+    }
+    header button.btn {
+        padding: 3rem 1rem;
+        margin: 1rem 1rem;
+    }
 }
 
-/* music */
-.music-box {
-    display: flex;
+/* ipad */
+@media all and (max-width: 750px) {
+    .header-section {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .page-title-h1 {
+        font-size: 2.6rem;
+    }
+    .page-title-p {
+        font-size: 1.6rem;
+    }
+    header button.btn {
+        padding: 1rem 1rem;
+        margin: 1rem 1rem;
+    }
+    .main-wrap-around {
+        width: 100%;
+    }
+    .game-wrap-around {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: auto;
+    }
+    .game {
+        height: 300px;
+        padding: 2%;
+    }
+    .btn-player {
+        font-size: 1.2rem;
+    }
+    footer {
+        font-size: 1rem;
+        padding: 2rem 0 0 0;
+        margin: 0;
+    }
+    .music-btn {
+        font-size: 0.5rem;
+        padding: 0.5rem;
+        top: 50px
+    }
 
 }
 
-.music-btn { 
-    background-color: rgb(255, 255, 255);
-    color: rgb(155, 36, 184);
-    flex-wrap: wrap;
-    font-size: 0.5em;
-    height: auto;
-    margin: 0;
-    padding: 0.3em;
-    position: fixed;
-    right: 0;
-    top: 100px;
-    width: 85px;
+/* phone */
+@media all and (max-width: 480px) {
+    .header-section{
+        padding: 0;
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .page-title-h1 {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+    .page-title-p { 
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    header button.btn {
+        padding: 0.7rem 0.6rem;
+        margin: 1.6rem 1rem;
+    }
+    .main-wrap-around {
+        width: 100%;
+    }
+    .game-wrap-around {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: auto;
+    }
+    .game {
+        height: 300px;
+    }
+    .btn-player {
+        font-size: 1.2rem;
+    }
+    footer {
+        font-size: 1rem;
+        padding: 2rem 0 0 0;
+        margin: 0;
+    }
 }
-
-/* footer */
-
-footer {
-    margin: 0;
-    padding: 10px;
-}
-
-
