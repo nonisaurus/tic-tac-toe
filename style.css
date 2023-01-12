@@ -238,45 +238,74 @@ header button.btn:active::before {
 
 /* token choices element */
 .extra-tokens{
-    justify-content: center;
     margin: 0 auto;
-    padding: 0.8rem;
-    width: 15%;
+    padding: 1.2rem;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 7rem;
+    background-size: cover;
+    width: 20%;
+    height: 4rem;
 }
 
 .possible-tokens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     left: 50%;
     position: absolute;
-    top: 60%;
+    top: 50%;
     transform: translate(-50%, -50%);
+    width: 80%;
 }
 
 .sweet-token {
     background-image: url(./pictures/token_one.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5rem;
 }
 .crepe-token {
     background-image: url(./pictures/token_two.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5rem;
 }
 .bunny-token {
     background-image: url(./pictures/token_three.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5rem;
 }
 .milkshake-token {
     background-image: url(./pictures/token_four.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5rem;
 }
 .shortcake-token {
     background-image: url(./pictures/token_five.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5rem;
 }
 .chocolate-token {
     background-image: url(./pictures/token_six.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5rem;
 }
 .tea-token {
     background-image: url(./pictures/token_seven.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5rem;
 }
 .pancake-token {
     background-image: url(./pictures/token_eight.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 5rem;
 }
 
 
@@ -391,6 +420,9 @@ a:hover {
     }
     .winning-message {
         z-index: -100;
+    }
+    .possible-tokens{
+        top: 55%;
     }
 }
 
@@ -508,5 +540,8 @@ a:hover {
         background-size: 12rem;
         font-size: 3rem;
         z-index: -100;
+    }
+    .possible-tokens {
+        top: 60%;
     }
 }

@@ -12,7 +12,7 @@ let paragraphHeader = document.querySelector('.page-title-p');
 const winningMessage = document.querySelector('.winning-message');
 
 const tokenChoices = document.querySelector('.possible-tokens')
-const extraTokenNodeList = document.querySelector('.extra-tokens')
+const extraTokenNodeList = document.querySelectorAll('.extra-tokens')
 
 const musicBox = document.querySelector('.music')
 let musicBtn = document.querySelector('.music-btn')
@@ -59,7 +59,7 @@ const game = () => {
     playingFieldSquares.forEach(
         function (element) {
             // removes classes so it clears fields
-            element.classList.remove('circle', 'cross')
+            element.classList.remove('circle', 'cross', playerToken)
 
             element.onclick = () => {
                 // saving input to empty variables
@@ -155,7 +155,7 @@ function toggleTurns(element) {
 
 // change background to circle image
 function circleFunction (element) {
-    element.classList.add('circle')
+    element.classList.add(playerToken)
     displayWhosTurn("Pink, it's your turn!")
 }
 
@@ -198,13 +198,20 @@ function resetPage () {
 
 
 // saving token choice - NOT DONE YET
-extraTokensArray.forEach(
-    function (element) {
-        element.onclick = () => {
-            element.push(specialToken.indexOf(element))
+function selectingToken () {
+
+    extraTokensArray.forEach(
+        function (element) {
+            element.onclick = (token) => {
+                playerToken = element.getAttribute("data-token");
+
+                removeAdVisible(tokenChoices, mainElement)
+            }
         }
-    }
-)
+    )
+}
+
+selectingToken()
 
 
 
