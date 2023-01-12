@@ -34,6 +34,8 @@ let circleWin = 0;
 let crossWin = 0;
 let tieWin = 0;
 
+let playerToken = "circle";
+
 const winningComboIndex = [
                         [0, 1, 2],
                         [3, 4, 5],
@@ -80,6 +82,7 @@ const game = () => {
 }
 
 
+
 // check if tokens numbers match winning numbers
 const determineWinner = (currentShape) => {
 
@@ -98,6 +101,7 @@ const determineWinner = (currentShape) => {
     } 
     return false 
 }
+
 
 
 // display winner
@@ -131,6 +135,10 @@ const displayWinner = () => {
         tieScore.innerText = tieWin
     } 
 }
+
+
+
+
 
 // toggle between two functions =CHANGE put to bottom
 function toggleTurns(element) {
@@ -167,8 +175,6 @@ function displayWhosTurn (content) {
 } 
 
 
-
-
 // remove invisibility class from first and add it to second else the opposite 
 function removeAdVisible (removeFirst, addFirst) {
     if (removeFirst.classList.contains('visibility-none')){
@@ -199,6 +205,7 @@ extraTokensArray.forEach(
         }
     }
 )
+
 
 
 

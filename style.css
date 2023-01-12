@@ -1,23 +1,22 @@
 /* imports */
 @import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
 @font-face {
     font-family: "bubble";
     src: url("./fonts/AlloyInk-font/AlloyInk-lgdWw.otf");
     }
-@font-face {
-    font-family: "winner";
-    src: url(./fonts/maslite-font/Maslite-51dLx.otf);
-}
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
+
+
 
 /* body */
 body {
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background: linear-gradient(rgb(247, 240, 248), rgb(251, 216, 251));
+    background: linear-gradient(rgb(248, 242, 249), rgb(249, 190, 249));
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -243,6 +242,9 @@ header button.btn:active::before {
     margin: 0 auto;
     padding: 0.8rem;
     width: 15%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 7rem;
 }
 
 .possible-tokens {
@@ -252,22 +254,63 @@ header button.btn:active::before {
     transform: translate(-50%, -50%);
 }
 
+.sweet-token {
+    background-image: url(./pictures/token_one.png);
+}
+.crepe-token {
+    background-image: url(./pictures/token_two.png);
+}
+.bunny-token {
+    background-image: url(./pictures/token_three.png);
+}
+.milkshake-token {
+    background-image: url(./pictures/token_four.png);
+}
+.shortcake-token {
+    background-image: url(./pictures/token_five.png);
+}
+.chocolate-token {
+    background-image: url(./pictures/token_six.png);
+}
+.tea-token {
+    background-image: url(./pictures/token_seven.png);
+}
+.pancake-token {
+    background-image: url(./pictures/token_eight.png);
+}
+
 
 /* winning message*/
 .winning-message {
-    background-size: contain;
+    background-size: cover;
     background: url(./pictures/WS2o.gif);
-    font-family: 'winner';
+    color: #fdd3fb;
+    font-family: 'Calligraffitti', cursive;
     font-size: 6rem;
+    font-size: 6rem;
+    font-weight: 700;
     left: 50%;
-    padding: 6rem;
+    left: 50%;
+    letter-spacing: 0.02em;
+    padding: 100rem;
     position: absolute;
     text-align: center;
+    text-align: center;
+    text-shadow: -15px 5px 20px #ced0d3;
+    top: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
     width: 70%;
-    color: #b84dff;
+    text-shadow: 5px 5px 0px #f0c9ff, 
+    10px 10px 0px #ec9af8, 
+    15px 15px 0px  #FF80BF, 
+    20px 20px 0px #EF5097, 
+    25px 25px 0px #d979ff, 
+    30px 30px 0px #da46ff;
+    z-index: -10;
 }
+
 
 
 /* music */
@@ -347,7 +390,7 @@ a:hover {
         padding: 3rem 1rem;
     }
     .winning-message {
-        padding: 7rem;
+        z-index: -100;
     }
 }
 
@@ -406,10 +449,9 @@ a:hover {
         display: flex;
     }
     .winning-message {
-        height: auto;
-        margin: 0;
-        padding: 0;
         width: 100%;
+        font-size: 5rem;
+        z-index: -100;
     }
 
 }
@@ -463,8 +505,8 @@ a:hover {
         background-size: 5rem;
     }
     .winning-message {
-        background-size: 200px;
-        font-size: 2rem;
-        padding: 180px 0;
+        background-size: 12rem;
+        font-size: 3rem;
+        z-index: -100;
     }
 }
