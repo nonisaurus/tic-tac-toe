@@ -7,14 +7,19 @@ const tokenChoiceBtn = document.querySelector('.choose-btn');
 const aiBtn = document.querySelector('.ai-btn');
 
 let mainElement = document.querySelector('.game-wrap-around')
-const tokenChoices = document.querySelector('.possible-tokens')
 const squaresNodeList = document.querySelectorAll('.playing-field');
-const winningMessage = document.querySelector('.winning-message');
 let paragraphHeader = document.querySelector('.page-title-p');
+const winningMessage = document.querySelector('.winning-message');
+
+const tokenChoices = document.querySelector('.possible-tokens')
 const extraTokenNodeList = document.querySelector('.extra-tokens')
+
 const musicBox = document.querySelector('.music')
 let musicBtn = document.querySelector('.music-btn')
 
+let circleScore = document.querySelector('.player-1-score')
+let crossScore = document.querySelector('.player-2-score')
+let tieScore = document.querySelector('.tie-score')
 
 // global variables
 let currentShape = "circle";
@@ -40,8 +45,6 @@ const winningComboIndex = [
 // nodelist to an array
 const playingFieldSquares = Array.prototype.slice.call(squaresNodeList);
 const extraTokensArray = Array.prototype.slice.call(extraTokenNodeList)
-
-
 
 
 
@@ -74,6 +77,7 @@ const game = () => {
     )
 }
 
+
 // check if tokens numbers match winning numbers
 const determineWinner = (currentShape) => {
 
@@ -92,6 +96,7 @@ const determineWinner = (currentShape) => {
     } 
     return false 
 }
+
 
 
 // toggle between two functions =CHANGE put to bottom
@@ -137,6 +142,8 @@ const displayWinner = () => {
          currentShape === 'circle' ? winningMessage.innerHTML = 'Purple Won' : winningMessage.innerHTML = 'Pink Won'
          
          paragraphHeader.innerHTML = 'Press RESTART'
+
+
         
     } else if ((circleTokens.length || crossTokens.length) === 5) { 
         
@@ -145,6 +152,7 @@ const displayWinner = () => {
         removeAdVisible(winningMessage, mainElement)
         
         paragraphHeader.innerHTML = 'Press RESTART'
+
     } 
 }
 
@@ -171,19 +179,28 @@ function resetPage () {
 }
 
 
-// saving token choice
+// saving token choice - NOT DONE YET
 extraTokensArray.forEach(
     function (element) {
         element.onclick = () => {
             element.push(specialToken.indexOf(element))
         }
-
     }
 )
 
-console.log(specialToken)
 
-
+// score
+function addingScores () {
+    if (isWinner){
+        if (currentShape === 'circle') {
+            circleScore.innerText ++
+        } else if (currentShape === 'cross') {
+            crossScore.innerText ++
+        } else {
+            tieScore.innerText ++
+        }        
+    }
+}
 
 
 
