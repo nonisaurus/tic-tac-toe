@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
 @font-face {
     font-family: "bubble";
-    src: url("/fonts/AlloyInk-font/AlloyInk-lgdWw.otf");
+    src: url("./fonts/AlloyInk-font/AlloyInk-lgdWw.otf");
     }
 @font-face {
     font-family: "winner";
-    src: url(/fonts/maslite-font/Maslite-51dLx.otf);
+    src: url(./fonts/maslite-font/Maslite-51dLx.otf);
 }
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
@@ -178,13 +178,13 @@ header button.btn:active::before {
 
 /* circle and cross background pictures */
 .circle {
-    background-image: url(/pictures/circle.png);
+    background-image: url(./pictures/circle.png);
     background-size: cover;
     border: 1px solid rgb(123, 120, 128);
 }
 
 .cross {
-    background-image: url(/pictures/cross.png);
+    background-image: url(./pictures/cross.png);
     background-size: cover;
     border: 1px solid rgb(123, 120, 128);
 } 
@@ -256,7 +256,7 @@ header button.btn:active::before {
 /* winning message*/
 .winning-message {
     background-size: contain;
-    background: url(/pictures/WS2o.gif);
+    background: url(./pictures/WS2o.gif);
     font-family: 'winner';
     font-size: 6rem;
     left: 50%;
