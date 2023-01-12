@@ -3,19 +3,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
 @font-face {
     font-family: "bubble";
-    src: url("/fonts/AlloyInk-lgdWw.otf");
+    src: url("/fonts/AlloyInk-font/AlloyInk-lgdWw.otf");
     }
+@font-face {
+    font-family: "winner";
+    src: url(/fonts/maslite-font/Maslite-51dLx.otf);
+}
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
 
 /* body */
 body {
     align-items: center;
-    background: linear-gradient(rgb(247, 240, 248), rgb(251, 216, 251));
     background-repeat: no-repeat;
     background-size: cover;
-    min-width: 100%;
-    min-height: 100vh;
+    background: linear-gradient(rgb(247, 240, 248), rgb(251, 216, 251));
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -23,6 +25,8 @@ body {
     font-size: 1.7rem;
     justify-content: center;
     margin: 0 auto;
+    min-height: 100vh;
+    min-width: 100%;
     padding: 0;
 
 }
@@ -31,13 +35,13 @@ body {
 /* heading */
 .header-section {
     border-bottom: solid 3px rgb(0, 0, 0);
+    box-shadow: 0 9px 9px -8px rgb(243, 152, 238);
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: 50% 50%;
     margin: 4rem;
     padding: 1rem;
     width: 80%;
-    box-shadow: 0 9px 9px -8px rgb(243, 152, 238);
 }
 
 .header-title {
@@ -59,11 +63,10 @@ body {
 
 .page-title-p {
     color: rgb(150, 45, 207);
+    font-family: 'Alegreya SC', serif;
     margin: 0;
     padding: 2rem;
     text-shadow: rgb(255, 174, 243) 2px -2px;
-    font-family: 'Alegreya SC', serif;
-
 }
 
 /* I may need it in the future */
@@ -102,7 +105,6 @@ header button {
     outline: none;
     text-decoration: none;
     vertical-align: middle;
-    
   }
 header button.btn {
     background: #fff0f0;
@@ -238,9 +240,9 @@ header button.btn:active::before {
 /* token choices element */
 .extra-tokens{
     justify-content: center;
+    margin: 0 auto;
     padding: 0.8rem;
     width: 15%;
-    margin: 0 auto;
 }
 
 .possible-tokens {
@@ -253,18 +255,24 @@ header button.btn:active::before {
 
 /* winning message*/
 .winning-message {
+    background-size: contain;
+    background: url(/pictures/WS2o.gif);
+    font-family: 'winner';
+    font-size: 6rem;
     left: 50%;
+    padding: 6rem;
     position: absolute;
+    text-align: center;
     top: 50%;
     transform: translate(-50%, -50%);
-    
+    width: 70%;
+    color: #b84dff;
 }
 
 
 /* music */
 .music-box {
-    display: flex;
-    
+    display: flex;   
 }
 
 .music-btn { 
@@ -288,9 +296,9 @@ header button.btn:active::before {
 
 /* footer */
 footer {
+    font-size: 1.2rem;
     margin: 2rem;
     padding: 3rem;
-    font-size: 1.2rem;
 }
 
 a {
@@ -313,14 +321,14 @@ a:hover {
 
 /* visibility none */
 .add-visibility {
-    visibility: visible;
     margin: 0;
+    visibility: visible;
 }
 
 /* vibility visible */
 .visibility-none {
-    visibility: hidden;
     margin: 0;
+    visibility: hidden;
 }
 
 
@@ -335,8 +343,11 @@ a:hover {
         font-size: 1.3rem;
     }
     header button.btn {
-        padding: 3rem 1rem;
         margin: 1rem 1rem;
+        padding: 3rem 1rem;
+    }
+    .winning-message {
+        padding: 7rem;
     }
 }
 
@@ -346,6 +357,7 @@ a:hover {
         display: flex;
         flex-direction: column;
         text-align: center;
+        margin: 2rem;
     }
     .page-title-h1 {
         font-size: 2.6rem;
@@ -354,8 +366,8 @@ a:hover {
         font-size: 1.6rem;
     }
     header button.btn {
-        padding: 1rem 1rem;
         margin: 1rem 1rem;
+        padding: 1rem 1rem;
     }
     .main-wrap-around {
         width: 100%;
@@ -363,10 +375,10 @@ a:hover {
     .game-wrap-around {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        height: auto;
         margin: 0;
         padding: 0;
-        height: auto;
+        width: 100%;
     }
     .game {
         height: 500px;
@@ -377,8 +389,8 @@ a:hover {
     }
     footer {
         font-size: 1rem;
-        padding: 2rem 0 0 0;
         margin: 0;
+        padding: 2rem 0 0 0;
     }
     .music-btn {
         font-size: 0.5rem;
@@ -386,22 +398,30 @@ a:hover {
         top: 50px
     }
     .circle {
-        background-size: 7rem;
-        background-repeat: no-repeat;
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: 7rem;
     }
-
+    .body {
+        display: flex;
+    }
+    .winning-message {
+        height: auto;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
 
 }
 
 /* phone */
 @media all and (max-width: 480px) {
     .header-section{
-        padding: 0;
-        margin: 1rem;
-        margin-top: 3rem;
-        display: flex;
         align-items: center;
+        display: flex;
+        margin-top: 3rem;
+        margin: 1rem;
+        padding: 0;
     }
     .page-title-h1 {
         font-size: 1.8rem;
@@ -412,8 +432,8 @@ a:hover {
         padding: 1rem;
     }
     header button.btn {
-        padding: 0.7rem 0.6rem;
         margin: 1.6rem 1rem;
+        padding: 0.7rem 0.6rem;
     }
     .main-wrap-around {
         width: 100%;
@@ -421,10 +441,10 @@ a:hover {
     .game-wrap-around {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        height: auto;
         margin: 0;
         padding: 0;
-        height: auto;
+        width: 100%;
     }
     .game {
         height: 300px;
@@ -434,12 +454,17 @@ a:hover {
     }
     footer {
         font-size: 1rem;
-        padding: 2rem 0 0 0;
         margin: 0;
+        padding: 2rem 0 0 0;
     }
     .circle {
-        background-size: 5rem;
-        background-repeat: no-repeat;
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: 5rem;
+    }
+    .winning-message {
+        background-size: 200px;
+        font-size: 2rem;
+        padding: 180px 0;
     }
 }
