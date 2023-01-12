@@ -74,8 +74,6 @@ const game = () => {
                 
                 // remove click event on current element
                 element.onclick = null
-                
-                console.log('this is current shape', currentShape)
             };
         }
     )

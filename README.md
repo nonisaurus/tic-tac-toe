@@ -81,7 +81,7 @@ My first obstacle was the fact that I had to write this code on my own. But I go
 
 I had one main blocker when I had to loop through my winning options and my user input options and see when they match. I got some help from my teacher and made it work as it shown below:
 
-```
+``` javascript
 const determineWinner = (currentShape) => {
 
     circleORcrossArray = currentShape === 'circle' ? circleTokens : crossTokens
