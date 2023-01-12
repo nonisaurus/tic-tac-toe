@@ -30,6 +30,10 @@ let circleTokens = [];
 let crossTokens = [];
 let specialToken = [];
 
+let circleWin = 0;
+let crossWin = 0;
+let tieWin = 0;
+
 const winningComboIndex = [
                         [0, 1, 2],
                         [3, 4, 5],
@@ -98,6 +102,37 @@ const determineWinner = (currentShape) => {
 }
 
 
+// display winner
+const displayWinner = () => {
+     if (isWinner){
+         removeAdVisible(winningMessage, mainElement)
+         
+         currentShape === 'circle' ? winningMessage.innerHTML = 'Purple Won' : winningMessage.innerHTML = 'Pink Won'
+         
+         paragraphHeader.innerHTML = 'Press RESTART'
+
+         if (isWinner) {
+            if (currentShape === 'circle') {
+                circleWin ++
+                circleScore.innerText = circleWin
+            } else if (currentShape === 'cross') {
+                crossWin ++
+                crossScore.innerText = crossWin
+            }     
+        }
+
+    } else if ((circleTokens.length || crossTokens.length) === 5) { 
+        
+        winningMessage.innerHTML = 'Its a Tie'
+        
+        removeAdVisible(winningMessage, mainElement)
+        
+        paragraphHeader.innerHTML = 'Press RESTART'
+
+        tieWin ++
+        tieScore.innerText = tieWin
+    } 
+}
 
 // toggle between two functions =CHANGE put to bottom
 function toggleTurns(element) {
@@ -134,27 +169,6 @@ function displayWhosTurn (content) {
 } 
 
 
-// display winner
-const displayWinner = () => {
-     if (isWinner){
-         removeAdVisible(winningMessage, mainElement)
-         
-         currentShape === 'circle' ? winningMessage.innerHTML = 'Purple Won' : winningMessage.innerHTML = 'Pink Won'
-         
-         paragraphHeader.innerHTML = 'Press RESTART'
-
-
-        
-    } else if ((circleTokens.length || crossTokens.length) === 5) { 
-        
-        winningMessage.innerHTML = 'Its a Tie'
-        
-        removeAdVisible(winningMessage, mainElement)
-        
-        paragraphHeader.innerHTML = 'Press RESTART'
-
-    } 
-}
 
 
 // remove invisibility class from first and add it to second else the opposite 
@@ -188,19 +202,6 @@ extraTokensArray.forEach(
     }
 )
 
-
-// score
-function addingScores () {
-    if (isWinner){
-        if (currentShape === 'circle') {
-            circleScore.innerText ++
-        } else if (currentShape === 'cross') {
-            crossScore.innerText ++
-        } else {
-            tieScore.innerText ++
-        }        
-    }
-}
 
 
 
