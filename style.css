@@ -321,12 +321,10 @@ header button.btn:active::before {
     left: 50%;
     left: 50%;
     letter-spacing: 0.02em;
-    padding: 100rem;
+    padding: 23rem;
     position: absolute;
     text-align: center;
-    text-align: center;
     text-shadow: -15px 5px 20px #ced0d3;
-    top: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     transform: translate(-50%,-50%);
