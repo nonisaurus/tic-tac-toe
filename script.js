@@ -197,7 +197,7 @@ function resetPage () {
 }
 
 
-// saving token choice - NOT DONE YET
+// saving token choice 
 function selectingToken () {
 
     extraTokensArray.forEach(
